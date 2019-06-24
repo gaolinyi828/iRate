@@ -1,7 +1,5 @@
 # project4-iRate
-    This is the team project repository of project 4 - the database for managing movie ratings, which includes the original java files, java docs and testing data samples.
-
-    Created by Sichen Wang and Linyi Gao
+This is the team project repository of project 4 - the database for managing movie ratings, which includes the original java files, java docs and testing data samples.<br>Created by Sichen Wang and Linyi Gao
 
 # Backgroud and requirements
     This project is a portion of a an application that enables registered movie theater customers to rate a movie that they saw at the theater, and for other registered customers to vote for reviews.
