@@ -1,32 +1,34 @@
 # project4-iRate
-This is the team project repository of project 4 - the database for managing movie ratings, which includes the original java files, java docs and testing data samples.<br>Created by Sichen Wang and Linyi Gao
+This is the team project repository of project 4 - the database for managing movie ratings, which includes the original java files, java docs and testing data samples.<br><br>
+
+Created by Sichen Wang and Linyi Gao
 
 # Backgroud and requirements
-    This project is a portion of a an application that enables registered movie theater customers to rate a movie that they saw at the theater, and for other registered customers to vote for reviews.
+This project is a portion of a an application that enables registered movie theater customers to rate a movie that they saw at the theater, and for other registered customers to vote for reviews.<br><br>
 
-    iRate is a social media application that encourages theater customers to rate a movie that they saw at the theater in the past week and write a short review. Other costumers can vote one review of a particular movie as "helpful" each day. The writer of the top rated review of a movie written three days earlier receives a free movie ticket, and voting is closed for all reviews of the movie written three days ago. Someone who voted one or more movie reviews as "helpful" on a given day will be chosen to receive a free concession item.
+iRate is a social media application that encourages theater customers to rate a movie that they saw at the theater in the past week and write a short review. Other costumers can vote one review of a particular movie as "helpful" each day. The writer of the top rated review of a movie written three days earlier receives a free movie ticket, and voting is closed for all reviews of the movie written three days ago. Someone who voted one or more movie reviews as "helpful" on a given day will be chosen to receive a free concession item.<br><br>
 
-    This project provides a back-end that could be used for a future project in a web development class to create web-based front-end to the database that allows a movie theater to operate this promotional application. It can also be used as part of a back end to a mobile application for the theater.
+This project provides a back-end that could be used for a future project in a web development class to create web-based front-end to the database that allows a movie theater to operate this promotional application. It can also be used as part of a back end to a mobile application for the theater.
 
 # Project details
-    The project is to develop and document a data model for representing entities and relationships in this promotial social media application, provide DDL for creating the tables, DML for editing entries in the tables, and DQL for making commonly used queries to retrieve information about the status of reviews and votes from the database.
+The project is to develop and document a data model for representing entities and relationships in this promotial social media application, provide DDL for creating the tables, DML for editing entries in the tables, and DQL for making commonly used queries to retrieve information about the status of reviews and votes from the database.<br><br>
 
-    The data model for the project is based on the concept of registered customers, movies seen by a costumer, reviews written by a customer, and votes cast by other costumers for a given movie.
+The data model for the project is based on the concept of registered customers, movies seen by a costumer, reviews written by a customer, and votes cast by other costumers for a given movie.<br><br>
 
-    Customer is a registered customer of the theater. The Customer information includes a customer name, email address, the date the customer joined, and a gensym customer ID. The information is entered by the theater when the customer registers. If a customer is deleted, all of his or her reviews and endorsements are deleted
+Customer is a registered customer of the theater. The Customer information includes a customer name, email address, the date the customer joined, and a gensym customer ID. The information is entered by the theater when the customer registers. If a customer is deleted, all of his or her reviews and endorsements are deleted.<br><br>
 
-    Movie is a record of a movie playing at the theater. It includes a title, and a gensym movie ID. This information is entered by t he theater for each movie it plays.
+Movie is a record of a movie playing at the theater. It includes a title, and a gensym movie ID. This information is entered by t he theater for each movie it plays.<br><br>
 
-    Attendance is a record of a movie seen by a customer on a given date. It includes a movie ID, the attendance date, and the customer ID. This information is entered when the customer purchases a ticket for a show. If a movie is deleted, all of its attendances are deleted. Attendance info is used to verify attendance when creating a review.
+Attendance is a record of a movie seen by a customer on a given date. It includes a movie ID, the attendance date, and the customer ID. This information is entered when the customer purchases a ticket for a show. If a movie is deleted, all of its attendances are deleted. Attendance info is used to verify attendance when creating a review.<br><br>
 
-    Review is a review of a particular movie attended by a custumer within the last week. The review includes the customer ID, the movie ID, the review date, a rating (0-5 stars), a short (1000 characters or less) review, and a gensym review ID. There can only be one movie review per customer, and the date of the review must be within 7 days of the most recent attendance of the movie. If a movie is deleted, all of its reviews are also deleted.
+Review is a review of a particular movie attended by a custumer within the last week. The review includes the customer ID, the movie ID, the review date, a rating (0-5 stars), a short (1000 characters or less) review, and a gensym review ID. There can only be one movie review per customer, and the date of the review must be within 7 days of the most recent attendance of the movie. If a movie is deleted, all of its reviews are also deleted.<br><br>
 
-    Endorsement is an endoresement of a movie review by a customer. A customer's current endorsement of a review for a movie must be at least one day after the customer's endorsement of a review for the same movie. The endorsement includes the review ID, the customerID of the endorser, and the endoresemnt date. A customer cannot endorse his or her own review. If a review is deleted, all endorsements are also deleted.
+Endorsement is an endoresement of a movie review by a customer. A customer's current endorsement of a review for a movie must be at least one day after the customer's endorsement of a review for the same movie. The endorsement includes the review ID, the customerID of the endorser, and the endoresemnt date. A customer cannot endorse his or her own review. If a review is deleted, all endorsements are also deleted.<br><br>
 
 # Table design
 ## Create tables
-    We create 5 tables as mentioned in project details:
-    Customer, Movie, Attendance, Review and Endorsement. The ER model is shown in the presentation slide.
+We create 5 tables as mentioned in project details:<br>
+Customer, Movie, Attendance, Review and Endorsement. The ER model is shown in the presentation slide.
 
 ### Table details
 #### Customer
@@ -125,23 +127,23 @@ Our samples of review is in main function of iRate_editTable.java. In the 14 sam
 * `14` the customer endorse 2 reviews of the same movie on one day
 
 ## Update data of table
-    We think only the personal information of customer can be updated. So we have the updateCustomer function using a query to update the name or email according to the customerID.
-    The main function has optional testing function that changes the email of customer 1 from gmail to 163.
+We think only the personal information of customer can be updated. So we have the updateCustomer function using a query to update the name or email according to the customerID.<br><br>
+The main function has optional testing function that changes the email of customer 1 from gmail to 163.
 
 ## Delete data from table
 We can delete customer, movie or review data from the database. "ON DELETE CASCADE" makes surThe main function has optional testing function thate that all related data will also be deleted.
     
 ### deleteCustomer function
-    using a query to delete a customer using input customerID
-    The main function has optional testing function that delete customer 1. And table printed before and after shows that the review he wrote and his endorsements are also deleted.
+using a query to delete a customer using input customerID<br><br>
+The main function has optional testing function that delete customer 1. And table printed before and after shows that the review he wrote and his endorsements are also deleted.
 
 ### deleteMovie function
-    using a query to delete a movie using input movieID
-    The main function has optional testing function that delete movie 2. And table printed before and after shows that the review written for this movie are also deleted.
+using a query to delete a movie using input movieID<br><br>
+The main function has optional testing function that delete movie 2. And table printed before and after shows that the review written for this movie are also deleted.
 
 ### deleteReview function
-    using a query to delete a review using input reviewID
-    The main function has optional testing function that delete review 3. And table printed before and after shows that the endorsed review are also deleted.
+using a query to delete a review using input reviewID<br><br>
+The main function has optional testing function that delete review 3. And table printed before and after shows that the endorsed review are also deleted.
 
 # Table Query
 ## print table
