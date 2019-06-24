@@ -31,7 +31,7 @@ We create 5 tables as mentioned in project details:<br>
 Customer, Movie, Attendance, Review and Endorsement. The ER model is shown in the presentation slide.
 
 ### Table details
-i[](https://drive.google.com/open?id=1av5JVqTZQ9SYA5RPNTNKC7uucf9YET5D)
+![](https://drive.google.com/open?id=1av5JVqTZQ9SYA5RPNTNKC7uucf9YET5D)
 #### Customer
     Name  varchar(64) not null
     Email varchar(64) not null check (isEmail(Email))
