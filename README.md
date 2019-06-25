@@ -1,4 +1,4 @@
-# project4-iRate
+# Project4-iRate
 This is the team project repository of project 4 - the database for managing movie ratings, which includes the original java files, java docs and testing data samples.<br><br>
 
 Created by Sichen Wang and Linyi Gao
@@ -147,3 +147,134 @@ The main function has optional testing function that delete review 3. And table 
 
 # Table Query
 ## print table
+We have functions that can print one specific table or all tables. Using a query to select from a table can easily print all infomation of the data.
+
+    Print table Customer:
+    name  email id
+    Austin  Austin@gmail.com  1
+    Biff  Biff@gmail.com  2
+    Bo  Bo@gmail.com  3
+    Bode  Bode@gmail.com  4
+    Brooklyn  Brooklyn@gmail.com  5
+    Bradley Bradley@gmail.com 6
+    Brilie  Brilie@gmail.com  7
+    Finley  Finley@gmail.com  8
+    Harley  Harley@gmail.com  9
+    Huxley  Huxley@gmail.com  10
+    ---------------------------------------------------------
+    Print table Movie:
+    title id
+    The Shawshank Redemption  1
+    The Godfather 2
+    The Godfather: Part II  3
+    12 Angry Men  5
+    The Dark Knight 4
+    Pulp Fiction  7
+    The Lord of the Rings: The Return of the King 6
+    The Good, the Bad and the Ugly  8
+    Fight Club  9
+    Schindler's List  10
+    ---------------------------------------------------------
+    Print table Attendance:
+    customerid  movieid attendancedate
+    1 1 2019-01-10
+    1 2 2019-01-11
+    2 2 2019-01-11
+    3 3 2019-01-13
+    3 5 2019-01-15
+    4 4 2019-01-14
+    5 5 2019-01-13
+    5 7 2019-01-17
+    6 6 2019-01-10
+    7 7 2019-01-10
+    8 8 2019-01-13
+    9 8 2019-01-12
+    9 9 2019-01-10
+    10  2 2019-01-11
+    10  10  2019-01-19
+    ---------------------------------------------------------
+    Print table Review
+    customerid  movieid reviewDate  Rating  Review  reviewId
+    1 2 2019-01-12  2.0 so good 1
+    2 2 2019-01-12  3.0 so good 2
+    3 5 2019-01-16  4.0 so good 3
+    10  10  2019-01-21  5.0 so good 6
+    10  2 2019-01-18  5.0 so good 8
+    6 6 2019-01-13  4.0 so good 9
+    ---------------------------------------------------------
+    Print table Endorsement
+    customerid  reviewid  endorsementdate
+    1 2 2019-01-13
+    4 3 2019-01-16
+    5 3 2019-01-16
+    3 1 2019-01-14
+    7 9 2019-01-13
+    8 9 2019-01-14
+
+## CustomerEndorsingOnAGivenDay function
+This function is used to give customers who endorse one or more reviews on a given day a free concession item. Taking the given date as input, we can use a query to get the customers from endorsement table.
+
+    These customers endorsed a review on 2019-01-14:
+    Customer 3
+    Customer 8
+
+## insertTicket function
+This function is used to get customers who wrote the most voted review on corresponding movies three days ago. We use queries to get all reviews written three days ago grouped by movies, and get the reviews that are voted most for each movie, and get the authors of these reviews.
+
+    Following customer wrote the top voted review for certain movies and won a free ticket
+    Austin! You have won a free ticket!
+    Biff! You have won a free ticket!
+    Bo! You have won a free ticket!
+    Bradley! You have won a free ticket!
+
+## average rating functions
+These functions are used to get the average ratings for one or all movies. We just use 'avg' and 'group by' to calculate movies, and get the result.
+
+    The average rating of movie 2 The Godfather is 3.3333333
+
+    No rating for movie 1
+    The average rating of movie 2 The Godfather is 3.3333333
+    No rating for movie 3
+    No rating for movie 4
+    The average rating of movie 5 12 Angry Men is 4.0
+    The average rating of movie 6 The Lord of the Rings: The Return of the King is 4.0
+    No rating for movie 7
+    No rating for movie 8
+    No rating for movie 9
+    The average rating of movie 10 Schindler's List is 5.0
+
+## endorsement functions
+This function is used to get the number of endorsements of one or all reviews. We can use count(reviewID) from endorsement to get the result.
+
+    Total votes for review 2 is 1
+
+    Total votes for review 1 is 1
+    Total votes for review 2 is 1
+    Total votes for review 3 is 2
+    Total votes for review 6 is 0
+    Total votes for review 8 is 0
+    Total votes for review 9 is 2
+
+## movieWatched function
+This function is used to get the movie lists watched by a customer. We join Attendance and Movie and get all movies the customer watched.
+
+    customer 1 has watched:
+    The Shawshank Redemption  2019-01-10
+    The Godfather 2019-01-11
+
+## reviewWrote function
+This function is used to get the reviews wrote by a customer. We select reviews from Review table using customerID input to get the results.
+
+    The review of customer 1
+    review 1
+
+## reviewEndorsed function
+This function is used to get the endorsements by a customer. We select reviewID from endorsement using customerID to get the results.
+
+    customer 3 has voted for:
+    review 1
+
+# Conclusions and Future improvements
+There are still a lot of aspects that might be improved, for example:
+* We can set all unique IDs as auto increment to make them created automatically. In our java files we just take them as an input for test purposes.
+* There is no trigger in our projects, and most of our checkings are outside the database. We may consider putting checkings into triggers or put multiqueries into one single query when we get more knowledge of SQL languages and functions. 
