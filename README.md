@@ -3,7 +3,7 @@ This is the team project repository of project 4 - the database for managing mov
 
 Created by Sichen Wang and Linyi Gao
 
-# Backgroud and requirements
+# Background and requirements
 This project is a portion of a an application that enables registered movie theater customers to rate a movie that they saw at the theater, and for other registered customers to vote for reviews.<br><br>
 
 iRate is a social media application that encourages theater customers to rate a movie that they saw at the theater in the past week and write a short review. Other costumers can vote one review of a particular movie as "helpful" each day. The writer of the top rated review of a movie written three days earlier receives a free movie ticket, and voting is closed for all reviews of the movie written three days ago. Someone who voted one or more movie reviews as "helpful" on a given day will be chosen to receive a free concession item.<br><br>
