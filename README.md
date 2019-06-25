@@ -131,7 +131,7 @@ We think only the personal information of customer can be updated. So we have th
 The main function has optional testing function that changes the email of customer 1 from gmail to 163.
 
 ## Delete data from table
-We can delete customer, movie or review data from the database. "ON DELETE CASCADE" makes surThe main function has optional testing function thate that all related data will also be deleted.
+We can delete customer, movie or review data from the database. "ON DELETE CASCADE" makes sure thate that all related data will also be deleted.
     
 ### deleteCustomer function
 using a query to delete a customer using input customerID<br><br>
