@@ -275,6 +275,13 @@ This function is used to get the endorsements by a customer. We select reviewID 
     review 1
 
 # Conclusions and Future improvements
+In the process of doing this project, we think that some checkings would be better to be put outside the creating database and before the insert operations because in principle they are almost the same and in this way it is easier to write relating codes.<br><br>
+
 There are still a lot of aspects that might be improved, for example:
 * We can set all unique IDs as auto increment to make them created automatically. In our java files we just take them as an input for test purposes.
 * There is no trigger in our projects, and most of our checkings are outside the database. We may consider putting checkings into triggers or put multiqueries into one single query when we get more knowledge of SQL languages and functions. 
+
+# Test the code
+* run iRate_createTable.java to create the table.
+* run iRate_editTable.java to test operations of insert, update and delete. Update and delete operations are optional in main function. Some samples are in data.txt and you will need to modify the path(line 343) of this file to correctly load its data. Other samples such as review and endorsement are in main function, and the process of operations would be printed out.
+* run iRate_query.java to test all queries for this table. We set some examples in main function to test them, and results would be printed out.
