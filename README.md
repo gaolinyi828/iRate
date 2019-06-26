@@ -282,6 +282,7 @@ There are still a lot of aspects that might be improved, for example:
 * There is no trigger in our projects, and most of our checkings are outside the database. We may consider putting checkings into triggers or put multiqueries into one single query when we get more knowledge of SQL languages and functions. 
 
 # Test the code
+* add the derby relating jar files and the functions.jar in lib file to the path of the project. functions.jar is used for the isEmail stored function.
 * run iRate_createTable.java to create the table.
 * run iRate_editTable.java to test operations of insert, update and delete. Update and delete operations are optional in main function. Some samples are in data.txt and you will need to modify the path(line 343) of this file to correctly load its data. Other samples such as review and endorsement are in main function, and the process of operations would be printed out.
 * run iRate_query.java to test all queries for this table. We set some examples in main function to test them, and results would be printed out.
