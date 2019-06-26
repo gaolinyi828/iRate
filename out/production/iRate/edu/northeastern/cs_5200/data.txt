@@ -1,0 +1,19 @@
+Austin	Austin@gmail.com	1	The Shawshank Redemption	1	2019-01-10
+Austin	Austin@gmail.com	1	The Godfather	2	2019-01-11
+Biff	Biff@gmail.com	2	The Godfather	2	2019-01-11
+Bo	Bo@gmail.com	3	The Godfather: Part II	3	2019-01-13
+Bo	Bo@gmail.com	3	12 Angry Men	5	2019-01-15
+Bode	Bode@gmail.com	4	The Dark Knight	4	2019-01-14
+Brooklyn	Brooklyn@gmail.com	5	12 Angry Men	5	2019-01-13
+Brooklyn	Brooklyn@gmail.com	5	Pulp Fiction	7	2019-01-17
+Bradley	Bradley@gmail.com	6	The Lord of the Rings: The Return of the King	6	2019-01-10
+Brilie	Brilie@gmail.com	7	Pulp Fiction	7	2019-01-10
+Finley	Finley@gmail.com	8	The Good, the Bad and the Ugly	8	2019-01-13
+Harley	Harley@gmail.com	9	Fight Club	9	2019-01-10
+Harley	Harley@gmail.com	9	The Good, the Bad and the Ugly	8	2019-01-12
+Huxley	Huxley@gmail.com	10	Schindler's List	10	2019-01-19	4	2019-01-21
+Huxley	Huxley@gmail.com	10	The Godfather	2	2019-01-11
+Finley	Finley@gmail.com	8	The Lord of the Rings: The Return of the King	6	2019-01-10
+Bode	Bode@gmail.com	4	Schindler's List	10	2019-01-19	4	2019-01-21
+Austin	Austin@gmail.com	1	The Godfather: Part II	3	2019-02-13
+Bode	Bode@gmail.com	4	Pulp Fiction	7	2019-01-10
