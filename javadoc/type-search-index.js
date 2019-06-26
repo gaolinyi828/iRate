@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"edu.northeastern.cs_5200","l":"iRate_createTable"},{"p":"edu.northeastern.cs_5200","l":"iRate_editTable"},{"p":"edu.northeastern.cs_5200","l":"iRate_query"}]
