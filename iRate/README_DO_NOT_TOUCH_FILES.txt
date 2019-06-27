@@ -1,9 +1,9 @@
 
 # *************************************************************************
-# ***              DO NOT TOUCH FILES IN THIS DIRECTORY!                ***
-# *** FILES IN THIS DIRECTORY AND SUBDIRECTORIES CONSTITUTE A DERBY     ***
-# *** DATABASE, WHICH INCLUDES THE DATA (USER AND SYSTEM) AND THE       ***
-# *** FILES NECESSARY FOR DATABASE RECOVERY.                            ***
-# *** EDITING, ADDING, OR DELETING ANY OF THESE FILES MAY CAUSE DATA    ***
-# *** CORRUPTION AND LEAVE THE DATABASE IN A NON-RECOVERABLE STATE.     ***
+# ***                     请不要动这个目录中的文件！                    ***
+# ***            这个目录及其子目录中的文件构成了一个 DERBY             ***
+# ***            数据库，其中包含进行数据库恢复所必需的                 ***
+# ***            数据（用户和系统）和文件。                             ***
+# ***            编辑、添加或删除其中任意文件都可能会导致数据           ***
+# ***            损坏，使数据库处于无法恢复的状态。                     ***
 # *************************************************************************
