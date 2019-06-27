@@ -105,8 +105,9 @@ Our solutions before the insert operation:
 
 #### samples of review insertion
 Our samples of review is in main function of iRate_editTable.java. In the 11 samples of reviews, 
-* `5 7 10 11` the customer write a review that he has not watched
+* `5` the customer write a review that he has not watched
 * `4` the review date is 2019-01-19 and the most recent endorsement date is 2019-01-10
+* `7` the review date is 2019-01-21 and the most recent endorsement date is 2019-02-13 which is invalid
 
 ### insertEndorsement function
 Insert an endorsement has 3 requirements:
@@ -123,7 +124,7 @@ Our solutions before the insert operation:
 Our samples of review is in main function of iRate_editTable.java. In the 14 samples of endorsements:
 * `1 7` the customer endorses his or her own review
 * `3 9` the endorsement is too late that the review for votes has been closed
-* `6 12 13` the customer endorses a review that does not exist
+* `6` the customer endorses a review that does not exist
 * `14` the customer endorse 2 reviews of the same movie on one day
 
 ## Update data of table
@@ -150,66 +151,74 @@ The main function has optional testing function that delete review 3. And table 
 We have functions that can print one specific table or all tables. Using a query to select from a table can easily print all infomation of the data.
 
     Print table Customer:
-    name  email id
-    Austin  Austin@gmail.com  1
-    Biff  Biff@gmail.com  2
-    Bo  Bo@gmail.com  3
-    Bode  Bode@gmail.com  4
-    Brooklyn  Brooklyn@gmail.com  5
-    Bradley Bradley@gmail.com 6
-    Brilie  Brilie@gmail.com  7
-    Finley  Finley@gmail.com  8
-    Harley  Harley@gmail.com  9
-    Huxley  Huxley@gmail.com  10
+    id          name        email       
+    1           Austin      Austin@gmail.com
+    2           Biff        Biff@gmail.com
+    3           Bo          Bo@gmail.com
+    4           Bode        Bode@gmail.com
+    5           Brooklyn    Brooklyn@gmail.com
+    6           Bradley     Bradley@gmail.com
+    7           Brilie      Brilie@gmail.com
+    8           Finley      Finley@gmail.com
+    9           Harley      Harley@gmail.com
+    10          Huxley      Huxley@gmail.com
     ---------------------------------------------------------
     Print table Movie:
-    title id
-    The Shawshank Redemption  1
-    The Godfather 2
-    The Godfather: Part II  3
-    12 Angry Men  5
-    The Dark Knight 4
-    Pulp Fiction  7
-    The Lord of the Rings: The Return of the King 6
-    The Good, the Bad and the Ugly  8
-    Fight Club  9
-    Schindler's List  10
+    id          title       
+    1           The Shawshank Redemption
+    2           The Godfather
+    3           The Godfather: Part II
+    5           12 Angry Men
+    4           The Dark Knight
+    7           Pulp Fiction
+    6           The Lord of the Rings: The Return of the King
+    8           The Good, the Bad and the Ugly
+    9           Fight Club  
+    10          Schindler's List
     ---------------------------------------------------------
     Print table Attendance:
-    customerid  movieid attendancedate
-    1 1 2019-01-10
-    1 2 2019-01-11
-    2 2 2019-01-11
-    3 3 2019-01-13
-    3 5 2019-01-15
-    4 4 2019-01-14
-    5 5 2019-01-13
-    5 7 2019-01-17
-    6 6 2019-01-10
-    7 7 2019-01-10
-    8 8 2019-01-13
-    9 8 2019-01-12
-    9 9 2019-01-10
-    10  2 2019-01-11
-    10  10  2019-01-19
+    customerId  movieId     attendancedate
+    1           1           2019-01-10  
+    1           2           2019-01-11  
+    1           3           2019-02-13  
+    2           2           2019-01-11  
+    3           3           2019-01-13  
+    3           5           2019-01-15  
+    4           4           2019-01-14  
+    4           7           2019-01-10  
+    4           10          2019-01-19  
+    5           5           2019-01-13  
+    5           7           2019-01-17  
+    6           6           2019-01-10  
+    7           7           2019-01-10  
+    8           6           2019-01-10  
+    8           8           2019-01-13  
+    9           8           2019-01-12  
+    9           9           2019-01-10  
+    10          2           2019-01-11  
+    10          10          2019-01-19  
     ---------------------------------------------------------
     Print table Review
-    customerid  movieid reviewDate  Rating  Review  reviewId
-    1 2 2019-01-12  2.0 so good 1
-    2 2 2019-01-12  3.0 so good 2
-    3 5 2019-01-16  4.0 so good 3
-    10  10  2019-01-21  5.0 so good 6
-    10  2 2019-01-18  5.0 so good 8
-    6 6 2019-01-13  4.0 so good 9
+    reviewid    constomerId movieid     reviewDate  rating      review      
+    1           1           2           2019-01-12  2.000000    so good     
+    2           2           2           2019-01-12  3.000000    so good     
+    3           3           5           2019-01-16  4.000000    so good     
+    6           10          10          2019-01-21  5.000000    so good     
+    8           10          2           2019-01-18  5.000000    so good     
+    9           6           6           2019-01-13  4.000000    so good     
+    10          8           6           2019-01-12  4.000000    so good     
+    11          1           3           2019-02-15  4.000000    so good     
     ---------------------------------------------------------
     Print table Endorsement
-    customerid  reviewid  endorsementdate
-    1 2 2019-01-13
-    4 3 2019-01-16
-    5 3 2019-01-16
-    3 1 2019-01-14
-    7 9 2019-01-13
-    8 9 2019-01-14
+    customerid  reviewid    endorsementdate
+    1           2           2019-01-13  
+    4           3           2019-01-16  
+    5           3           2019-01-16  
+    3           1           2019-01-14  
+    7           9           2019-01-13  
+    8           9           2019-01-14  
+    3           10          2019-01-13  
+    2           11          2019-02-15
 
 ## CustomerEndorsingOnAGivenDay function
 This function is used to give customers who endorse one or more reviews on a given day a free concession item. Taking the given date as input, we can use a query to get the customers from endorsement table.
@@ -221,11 +230,16 @@ This function is used to give customers who endorse one or more reviews on a giv
 ## insertTicket function
 This function is used to get customers who wrote the most voted review on corresponding movies three days ago. We use queries to get all reviews written three days ago grouped by movies, and get the reviews that are voted most for each movie, and get the authors of these reviews.
 
-    Following customer wrote the top voted review for certain movies and won a free ticket
-    Austin! You have won a free ticket!
-    Biff! You have won a free ticket!
-    Bo! You have won a free ticket!
-    Bradley! You have won a free ticket!
+    Following customers wrote the top voted review for certain movies and won a free ticket on 2019-01-15
+    Austin! You have won a free ticket! 
+    You wrote the most voted review on The Godfather.
+    You had 1 votes.
+    Biff! You have won a free ticket! 
+    You wrote the most voted review on The Godfather.
+    You had 1 votes.
+    Finley! You have won a free ticket! 
+    You wrote the most voted review on The Lord of the Rings: The Return of the King.
+    You had 1 votes.
 
 ## average rating functions
 These functions are used to get the average ratings for one or all movies. We just use 'avg' and 'group by' to calculate movies, and get the result.
@@ -254,25 +268,39 @@ This function is used to get the number of endorsements of one or all reviews. W
     Total votes for review 6 is 0
     Total votes for review 8 is 0
     Total votes for review 9 is 2
+    Total votes for review 10 is 1
+    Total votes for review 11 is 1
 
 ## movieWatched function
 This function is used to get the movie lists watched by a customer. We join Attendance and Movie and get all movies the customer watched.
 
     customer 1 has watched:
-    The Shawshank Redemption  2019-01-10
-    The Godfather 2019-01-11
+    The Shawshank Redemption      2019-01-10                    
+    The Godfather                 2019-01-11                    
+    The Godfather: Part II        2019-02-13  
 
 ## reviewWrote function
 This function is used to get the reviews wrote by a customer. We select reviews from Review table using customerID input to get the results.
 
     The review of customer 1
     review 1
+    review 11
 
 ## reviewEndorsed function
 This function is used to get the endorsements by a customer. We select reviewID from endorsement using customerID to get the results.
 
     customer 3 has voted for:
     review 1
+    review 10
+    
+## printAllTableCount function
+This function is used to print all table counts.
+
+    Table Attendance : count: 19
+    Table Endorsement : count: 8
+    Table Review : count: 8
+    Table Customer : count: 10
+    Table Movie : count: 10
 
 # Conclusions and Future improvements
 In the process of doing this project, we think that some checkings would be better to be put outside the creating database and before the insert operations because in principle they are almost the same and in this way it is easier to write relating codes.<br><br>
@@ -282,7 +310,7 @@ There are still a lot of aspects that might be improved, for example:
 * There is no trigger in our projects, and most of our checkings are outside the database. We may consider putting checkings into triggers or put multiqueries into one single query when we get more knowledge of SQL languages and functions. 
 
 # Test the code
-* add the derby relating jar files and the functions.jar in lib file to the path of the project. functions.jar is used for the isEmail stored function.
+* add the derby relating jar files in lib file to the path of the project.
 * run iRate_createTable.java to create the table.
 * run iRate_editTable.java to test operations of insert, update and delete. Update and delete operations are optional in main function. Some samples are in data.txt and you will need to modify the path(line 343) of this file to correctly load its data. Other samples such as review and endorsement are in main function, and the process of operations would be printed out.
 * run iRate_query.java to test all queries for this table. We set some examples in main function to test them, and results would be printed out.
