@@ -155,6 +155,9 @@ public class iRate_editTable {
 					System.err.println("The date " + reviewDate + " of the review " + reviewID + " must be within 7 days of the most recent attendance of the movie!");
 				}
 			}
+			else {
+				System.err.println("Cannot write a review for a movie you have not watched!");
+			}
 			rs1.close();
 		} catch (SQLException e) {
 			System.err.println("Input review invalid!");
